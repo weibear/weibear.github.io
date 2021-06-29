@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="三种模式。">
+  <meta name="description" content="简单工厂模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="23种设计模式之模式分类(三)">
-<meta property="og:url" content="http://example.com/2021/06/28/3-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB/index.html">
+<meta property="og:title" content="23种设计模式之创建型-简单工厂模式">
+<meta property="og:url" content="http://example.com/2021/06/29/4-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%9E%8B-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="三种模式。">
+<meta property="og:description" content="简单工厂模式">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-28T09:49:58.000Z">
-<meta property="article:modified_time" content="2021-06-28T10:18:37.042Z">
+<meta property="og:image" content="https://gitee.com/Rwangwei/resources/raw/master/picture/design-pattern/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82.png">
+<meta property="article:published_time" content="2021-06-29T06:57:39.000Z">
+<meta property="article:modified_time" content="2021-06-29T07:03:06.314Z">
 <meta property="article:author" content="Wei Bear">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Rwangwei/resources/raw/master/picture/design-pattern/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82.png">
 
-<link rel="canonical" href="http://example.com/2021/06/28/3-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB/">
+<link rel="canonical" href="http://example.com/2021/06/29/4-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%9E%8B-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>23种设计模式之模式分类(三) | Blog</title>
+  <title>23种设计模式之创建型-简单工厂模式 | Blog</title>
   
 
 
@@ -155,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/28/3-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/29/4-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%9E%8B-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          23种设计模式之模式分类(三)
+          23种设计模式之创建型-简单工厂模式
         </h1>
 
         <div class="post-meta">
@@ -179,16 +181,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-06-28 17:49:58 / 修改时间：18:18:37" itemprop="dateCreated datePublished" datetime="2021-06-28T17:49:58+08:00">2021-06-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
+              <time title="创建时间：2021-06-29 14:57:39 / 修改时间：15:03:06" itemprop="dateCreated datePublished" datetime="2021-06-29T14:57:39+08:00">2021-06-29</time>
             </span>
 
           
@@ -202,45 +195,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>三种模式。</p>
+        <p>简单工厂模式</p>
 <span id="more"></span>
 
-<h2 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h2><p>创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将模块中对象的创建和对象的使用分离。为了使结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。</p>
-<ol>
-<li> 简单工厂模式（Simple Factory Pattern）</li>
-<li> 工厂方法模式（Factory Method Pattern）</li>
-<li> 抽象工厂模式（Abstract Factory Pattern）</li>
-<li> 单例模式（Singleton Pattern）</li>
-<li> 生成器模式（Builder Pattern）</li>
-<li> 原型模式（Prototype Pattern）</li>
-</ol>
-<h2 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h2><p>结构型模式(Structural Pattern)描述如何将类或者对 象结合在一起形成更大的结构，就像搭积木，可以通过 简单积木的组合形成复杂的、功能更为强大的结构。结构型模式可以分为类结构型模式和对象结构型模式：</p>
+<blockquote>
+<p>简单工厂模式(Simple Factory Pattern)：专门定义一个类（工厂类）来负责创建其他类的实例。可以根据创建方法的参数来返回不同类的实例，被创建的实例通常都具有共同的父类。</p>
+</blockquote>
+<p><img src="https://gitee.com/Rwangwei/resources/raw/master/picture/design-pattern/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82.png" alt="https://gitee.com/Rwangwei/resources/raw/master/picture/design-pattern/简单工厂.png"></p>
+<p>举例：</p>
+<p>简单工厂模式像一个代工厂，一个工厂可以生产多种产品。举个例子，一个饮料加工厂同时帮百事可乐和可口可乐生产，加工厂根据输入参数Type来生产不同的产品。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可乐抽象类</span></span><br><span class="line"><span class="meta">@interface</span> Cola : NSObject</span><br><span class="line"><span class="meta">@end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可口可乐产品类</span></span><br><span class="line"><span class="meta">@interface</span> CocaCola : Cola</span><br><span class="line"><span class="meta">@end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 百事可乐产品类</span></span><br><span class="line"><span class="meta">@interface</span> PesiCola : Cola</span><br><span class="line"><span class="meta">@end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单工厂实现</span></span><br><span class="line"><span class="meta">@implementation</span> SimpleFactory</span><br><span class="line"></span><br><span class="line">+ (Cola *)createColaWithType:(NSInteger)type &#123;</span><br><span class="line">    <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> [CocaCola <span class="keyword">new</span>];</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [PesiCola <span class="keyword">new</span>];</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> nil;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0 生产可口可乐</span></span><br><span class="line">Cola *cocaCola = [SimpleFactory createColaWithType:<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 生产百事可乐</span></span><br><span class="line">Cola *pesiCola = [SimpleFactory createColaWithType:<span class="number">1</span>];</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
 <ul>
-<li>  类结构型模式关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系。</li>
-<li>  对象结构型模式关心类与对象的组合，通过关联关系使得在一 个类中定义另一个类的实例对象，然后通过该对象调用其方法。 根据“合成复用原则”，在系统中尽量使用关联关系来替代继 承关系，因此大部分结构型模式都是对象结构型模式。</li>
+<li>  使用者只需要给工厂类传入一个正确的约定好的参数，就可以获取你所需要的对象，而不需要知道其创建细节，一定程度上减少系统的耦合。</li>
+<li>  客户端无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可，减少开发者的记忆成本。</li>
 </ul>
-<ol>
-<li> 外观模式</li>
-<li> 适配器模式</li>
-<li> 桥接模式</li>
-<li> 代理模式</li>
-<li> 装饰者模式</li>
-<li> 享元模式</li>
-</ol>
-<h2 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h2><p>行为型模式(Behavioral Pattern)是对在不同的对象之间划分责任和算法的抽象化。行为型模式不仅仅关注类和对象的结构，而且重点关注它们之间的相互作用。通过行为型模式，可以更加清晰地划分类与对象的职责，并研究系统在运行时实例对象之间的交互。</p>
-<ol>
-<li> 职责链模式</li>
-<li> 命令模式</li>
-<li> 解释器模式</li>
-<li> 迭代器模式</li>
-<li> 中介者模式</li>
-<li> 备忘录模式</li>
-<li> 观察者模式</li>
-<li> 状态模式</li>
-<li> 策略模式</li>
-<li>模板方法模式</li>
-<li>访问者模式</li>
-</ol>
+<p>缺点：</p>
+<ul>
+<li>  如果业务上添加新产品的话，就需要修改工厂类原有的判断逻辑，这其实是违背了开闭原则的</li>
+<li>  在产品类型较多时，有可能造成工厂逻辑过于复杂。所以简单工厂模式比较适合产品种类比较少而且增多的概率很低的情况。</li>
+</ul>
 
     </div>
 
@@ -256,13 +235,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/24/2-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/" rel="prev" title="23种设计模式之六大原则(二)">
-      <i class="fa fa-chevron-left"></i> 23种设计模式之六大原则(二)
+    <a href="/2021/06/28/3-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB/" rel="prev" title="23种设计模式之模式分类(三)">
+      <i class="fa fa-chevron-left"></i> 23种设计模式之模式分类(三)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/29/4-23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%9E%8B-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" rel="next" title="23种设计模式之创建型-简单工厂模式">
-      23种设计模式之创建型-简单工厂模式 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -321,7 +297,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">创建型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">结构型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">行为型</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
